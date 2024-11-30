@@ -1,0 +1,5 @@
+@if (context() === 'login') {
+    <app-login (submitLogin)="login($event)" (switchContext)="changeContext($event)"></app-login>
+} @else if (context() === 'register') {
+    <app-register (submitRegister)="register($event)" (switchContext)="changeContext($event)"></app-register>
+}

@@ -1,0 +1,7 @@
+<p>Register</p>
+<form [formGroup]="registerForm" (submit)="register()">
+    <input type="email" formControlName="email" />
+    <input type="password" formControlName="password" />
+    <button type="submit">Register</button>
+</form>
+<button (click)="switchContext.emit('login')">You already have an Account? Login</button>
