@@ -4,6 +4,7 @@ import {RegisterComponent} from './components/register/register.component';
 import {AuthService} from '../../shared/services/auth/auth.service';
 import {Credentials} from '../../shared/interfaces/credentials';
 import {Router} from '@angular/router';
+import {AuthChangeEvent, Session} from '@supabase/supabase-js';
 
 @Component({
   selector: 'app-auth',
@@ -20,7 +21,7 @@ export class AuthComponent {
     this.#authService.login(data)
       .then((res) => {
         if (res.data.user && res.data.user.role === 'authenticated') {
-          this.#router.navigate(['/home']);
+          this.#router.navigate(['home']);
         }
       }).catch((err) => {
       console.log(err);
@@ -31,7 +32,7 @@ export class AuthComponent {
     this.#authService.register(data)
       .then((res) => {
         if (res.data.user && res.data.user.role === 'authenticated') {
-          this.#router.navigate(['/dashboard']);
+          this.#router.navigate(['home']);
         }
       })
       .catch((err) => {
