@@ -21,7 +21,6 @@ export class RegisterComponent {
 
     register() {
       if (this.registerForm.invalid) {
-        alert('Form invalid');
         return;
       }
       this.submitRegister.emit(this.registerForm.getRawValue());

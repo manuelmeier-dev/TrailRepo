@@ -1,15 +1,17 @@
-import {Component, inject, Signal, signal} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component';
 import {AuthService} from '../../shared/services/auth/auth.service';
 import {Credentials} from '../../shared/interfaces/credentials';
 import {Router} from '@angular/router';
-import {AuthChangeEvent, Session} from '@supabase/supabase-js';
 
 @Component({
   selector: 'app-auth',
   imports: [LoginComponent, RegisterComponent],
   templateUrl: './auth.component.html',
+  host: {
+    class: 'w-full h-screen flex justify-center items-center bg-gray-100'
+  }
 })
 export class AuthComponent {
   #authService = inject(AuthService);

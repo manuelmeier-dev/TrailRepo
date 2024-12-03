@@ -1,7 +1,10 @@
-<p>Login</p>
+<p class="text-slate-900 font-bold pb-14">Welcome to TrailRepo</p>
 <form [formGroup]="loginForm" (submit)="login()">
-    <input type="email" formControlName="email" />
-    <input type="password" formControlName="password" />
-    <button type="submit">Login</button>
+  <input uiInputStyle [isSubmitted]="isSubmitted()" placeholder="Email" type="email" formControlName="email"/>
+  <br/>
+  <input uiInputStyle [isSubmitted]="isSubmitted()" placeholder="Password" type="password" formControlName="password"/>
+
+  <br/>
+  <button type="submit" class="bg-amber-500 w-full rounded-full p-2 text-white font-semibold">Login</button>
 </form>
-<button (click)="switchContext.emit('register')">No Account? Register</button>
+<button (click)="switchContext.emit('register')" class="pt-24">Don't have an account? Sign up</button>
