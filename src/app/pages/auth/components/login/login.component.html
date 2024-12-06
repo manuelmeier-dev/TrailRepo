@@ -1,10 +1,18 @@
-<p class="text-slate-900 font-bold pb-14">Welcome to TrailRepo</p>
-<form [formGroup]="loginForm" (submit)="login()">
-  <input uiInputStyle [isSubmitted]="isSubmitted()" placeholder="Email" type="email" formControlName="email"/>
-  <br/>
-  <input uiInputStyle [isSubmitted]="isSubmitted()" placeholder="Password" type="password" formControlName="password"/>
+<p class="font-bold text-2xl pb-14 tracking-tight">Welcome to TrailRepo</p>
+<form [formGroup]="loginForm" class="space-y-6 w-full" (submit)="login()">
+  <div>
+    <Label for="email" class=" text-sm font-medium">Email address</Label>
+    <input uiInputStyle id="email" [isSubmitted]="isSubmitted()" type="email" formControlName="email"/>
+  </div>
 
-  <br/>
-  <button type="submit" class="bg-amber-500 w-full rounded-full p-2 text-white font-semibold">Login</button>
+  <div>
+    <Label for="password" class=" text-sm font-medium">Password</Label>
+    <input uiInputStyle id="password" [isSubmitted]="isSubmitted()" type="password" formControlName="password"/>
+  </div>
+  <button uiPrimaryButton type="submit" class="w-full">Login</button>
 </form>
-<button (click)="switchContext.emit('register')" class="pt-24">Don't have an account? Sign up</button>
+<p class="pt-16 text-gray-500 text-sm">
+  Don't have an account?
+  <button (click)="switchContext.emit('register')" class="font-semibold text-indigo-600 hover:text-indigo-500">Sign up
+  </button>
+</p>

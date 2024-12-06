@@ -4,8 +4,8 @@ import {NgControl} from '@angular/forms';
 @Directive({
   selector: '[uiInputStyle]',
   host: {
-    class: 'border-b-2 p-1 mb-10 w-full focus:border-amber-500',
-    '[class.border-red-400]': 'showError'
+    class: 'block w-full rounded-md px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm',
+    '[class.outline-red-400]': 'showError'
   }
 })
 export class InputDirective {

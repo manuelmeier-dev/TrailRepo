@@ -2,10 +2,11 @@ import {ChangeDetectionStrategy, Component, inject, output, signal} from '@angul
 import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {Credentials} from '../../../../shared/interfaces/credentials';
 import {InputDirective} from '../../../../shared/components/input/input.directive';
+import {ButtonDirective} from '../../../../shared/components/buttons/primary/button.directive';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, InputDirective],
+  imports: [ReactiveFormsModule, InputDirective, ButtonDirective],
   templateUrl: './login.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {

@@ -1,7 +1,18 @@
-<p>Register</p>
-<form [formGroup]="registerForm" (submit)="register()">
-    <input type="email" formControlName="email" />
-    <input type="password" formControlName="password" />
-    <button type="submit">Register</button>
+<p class="font-bold text-2xl pb-14 tracking-tight">Register for TrailRepo</p>
+<form [formGroup]="registerForm" class="space-y-6 w-full" (submit)="register()">
+  <div>
+    <Label for="email" class="text-sm font-medium">Email address</Label>
+    <input uiInputStyle id="email" [isSubmitted]="isSubmitted()" type="email" formControlName="email"/>
+  </div>
+
+  <div>
+    <Label for="password" class="text-sm font-medium">Password</Label>
+    <input uiInputStyle id="password" [isSubmitted]="isSubmitted()" type="password" formControlName="password"/>
+  </div>
+  <button uiPrimaryButton type="submit" class="w-full">Register</button>
 </form>
-<button (click)="switchContext.emit('login')">You already have an Account? Login</button>
+<p class="pt-16 text-gray-500 text-sm">
+  Already have an account?
+  <button (click)="switchContext.emit('login')" class="font-semibold text-indigo-600 hover:text-indigo-500">Sign in
+  </button>
+</p>
